@@ -27,7 +27,7 @@ function ContentPage() {
   const classes = useStyles();
 
   return (
-    <Container style={{ marginTop: "2rem" }}>
+    <Container style={{ marginTop: "5rem" }}>
       <Typography variant="h4" gutterBottom>
         Code Guider Offers Cross Communication Portal
       </Typography>

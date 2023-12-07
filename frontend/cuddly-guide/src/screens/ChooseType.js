@@ -22,7 +22,7 @@ const ChooseType = () => {
       );
 
       if (user === "Student") {
-        navigate("/studentWelcome");
+        navigate("/studentChooseLang");
       } else {
         navigate("/Quiz");
       }
@@ -34,11 +34,12 @@ const ChooseType = () => {
     <div
       style={{
         height: 670,
-        backgroundColor: "#E6F7FF",
+        // backgroundColor: "#E6F7FF",
         alignSelf: "center",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        marginTop:40
       }}
     >
       <div
@@ -50,7 +51,7 @@ const ChooseType = () => {
       >
         <div
           style={{
-            width: 800,
+            width: 1000,
             height: 250,
             display: "flex",
             justifyContent: "center",
@@ -60,7 +61,7 @@ const ChooseType = () => {
           }}
         >
           <Typography
-            style={{ fontSize: 50, textAlign: "center", display: "block" }}
+            style={{ fontSize: 80, textAlign: "center", display: "block" }}
           >
             Your trusted source for Mentorships & Coaching.
           </Typography>
@@ -77,7 +78,7 @@ const ChooseType = () => {
           }}
         >
           <Typography
-            style={{ fontSize: 18, textAlign: "center", marginTop: 10 }}
+            style={{ fontSize: 18, textAlign: "center", marginTop: 100 }}
           >
             We shouldn't have to figure everything out on our own.In an age
             where it's easier than ever to connect,let's start trusting on other
@@ -94,7 +95,7 @@ const ChooseType = () => {
             alignItems: "center",
             marginLeft: "auto",
             marginRight: "auto",
-            marginTop: 70,
+            marginTop: 150,
           }}
         >
           <Button
@@ -102,14 +103,14 @@ const ChooseType = () => {
               UpdateUserAsStudent("Student");
             }}
             style={{
-              backgroundColor: "#12486B",
-              width: 300,
-              height: 40,
+              backgroundColor: "#FAC213",
+              width: 400,
+              height: 50,
               marginLeft: "auto",
               marginRight: "auto",
               display: "flex",
               borderRadius: 20,
-              color: "white",
+              color: "black",
             }}
           >
             Find a Mentor
@@ -124,14 +125,14 @@ const ChooseType = () => {
               UpdateUserAsStudent("Mentor");
             }}
             style={{
-              backgroundColor: "#12486B",
-              width: 300,
-              height: 40,
+              backgroundColor: "#FAC213",
+              width: 400,
+              height: 50,
               marginLeft: "auto",
               marginRight: "auto",
               display: "flex",
               borderRadius: 20,
-              color: "white",
+              color: "black",
             }}
           >
             Become a mentor

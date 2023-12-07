@@ -11,7 +11,7 @@ import maleBussiness from '../assets/images/maleBussiness.jpg';
 function AboutPage() {
   return (
     <div>
-      <Container style={{ marginTop: '2rem' }}>
+      <Container style={{ marginTop: '5rem' }}>
         <div style={{ display: 'flex' }}>
           <div style={{ flex: 1, marginRight: '1rem' }}>
             <img

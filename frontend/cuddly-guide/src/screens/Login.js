@@ -224,7 +224,7 @@ import {
 import { css } from "@emotion/react";
 import signupImage from "../assets/images/signup1.jpg";
 
-import background from "../assets/images/code.jpg";
+import background from "../assets/images/1.png";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -276,7 +276,7 @@ const Login = () => {
         toast.success(result?.data?.message);
         localStorage.setItem("userdetails", JSON.stringify(result?.data?.data));
 
-        navigate("/chooseSubject");
+        navigate("/chooseCategory");
       } catch (err) {
         toast.error(err?.response?.data?.message);
       }
@@ -286,7 +286,7 @@ const Login = () => {
   return (
     <div
       style={{
-        background: "#E6F7FF",
+        // background: "#E6F7FF",
         // backgroundImage: `url(${background})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -296,6 +296,8 @@ const Login = () => {
         alignItems: "center",
         width: "100%",
         height: "100vh",
+        overflow:'hidden'
+      
       }}
     >
       <ToastContainer
@@ -310,7 +312,7 @@ const Login = () => {
         pauseOnHover
         theme="light"
       />
-      <Card
+      {/* <Card
         style={{
           display: "flex",
           width: "800px",
@@ -321,25 +323,8 @@ const Login = () => {
           boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
           width: "800px", // Adjust the card width as needed
         }}
-      >
-        <div
-          style={{
-            width: "50%",
-            height: "100%", // Adjust the width of the image container
-            // Add padding for space
-            backgroundColor: "pink",
-          }}
-        >
-          <img
-            src={background}
-            alt="Signup"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
-        </div>
+      > */}
+
         <div
           style={{
             width: "50%",
@@ -351,7 +336,7 @@ const Login = () => {
           <Typography
             style={{
               marginBottom: "20px",
-              fontSize: 30,
+              fontSize: 35,
               fontWeight: "500",
               color: "#212A3E",
               textAlign: "center",
@@ -361,9 +346,12 @@ const Login = () => {
           </Typography>
           <TextField
             style={{
-              marginBottom: "10px",
-              maxWidth: "350px",
-              borderRadius: "10px",
+              marginTop: 60,
+              width: 500,
+              borderRadius: 10,
+              display: "flex",
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
             label="Email"
             margin="normal"
@@ -374,9 +362,12 @@ const Login = () => {
           />
           <TextField
             style={{
-              marginBottom: "20px",
-              maxWidth: "350px",
-              borderRadius: "10px",
+              marginTop: 20,
+              width: 500,
+              borderRadius: 10,
+              display: "flex",
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
             label="Password"
             type="password"
@@ -398,11 +389,11 @@ const Login = () => {
             onClick={handleSubmit}
             variant="contained"
             style={{
-              width: "250px",
+              width: "300px",
               marginTop: "20px",
               borderRadius: "20px",
-              backgroundColor: "#212A3E",
-              color: "#fff",
+              backgroundColor: "#FAC213",
+              color: "black",
               alignSelf: "center",
             }}
           >
@@ -419,7 +410,25 @@ const Login = () => {
             Don't have an account?
           </Button>
         </div>
-      </Card>
+        <div
+          style={{
+            width: "80%",
+            height: "100%", // Adjust the width of the image container
+            // Add padding for space
+            // backgroundColor: "pink",
+          }}
+        >
+          <img
+            src={background}
+            alt="Signup"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+      {/* </Card> */}
     </div>
   );
 };

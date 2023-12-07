@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Card, CardContent, Grid, Button } from "@mui/material";
+import {
+  Typography,
+  Card,
+  CardContent,
+  Grid,
+  Button,
+  Divider,
+} from "@mui/material";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
@@ -81,7 +88,12 @@ const LecturerDashboard = () => {
       console.log(err?.response?.data?.message);
     }
   };
-
+  const dividerStyle = {
+    width: 1,
+    backgroundColor: "skyblue",
+    height: "100%",
+    // marginRight: 10,
+  };
   const handleDelete = async () => {
     try {
       const result = await axios.delete(
@@ -149,7 +161,12 @@ const LecturerDashboard = () => {
     navigate("/Messenger");
   };
   return (
-    <div style={{ backgroundColor: "#f2f2f2", padding: "20px" }}>
+    <div
+      style={{
+        background: "linear-gradient(to left,  #87CEEB, #87CEEB, #F5F5F5)",
+        padding: "20px",
+      }}
+    >
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -166,8 +183,8 @@ const LecturerDashboard = () => {
         <Typography
           variant="h4"
           style={{
-            marginTop: 20,
-            marginLeft: 10,
+            marginTop: 70,
+            marginLeft: 50,
             fontSize: 30,
 
             color: "#212A3E",
@@ -176,25 +193,12 @@ const LecturerDashboard = () => {
         >
           Code Guider
         </Typography>
-        <Button
-          onClick={handleOpenChat}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "15px",
-            marginTop: "20px",
-          }}
-        >
-          <FontAwesomeIcon icon={faComments} style={iconStyles} />
-        </Button>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <Typography
-        
           style={{
-           
-            marginLeft: 10,
+            marginLeft: 50,
+            marginTop: 10,
             fontSize: 25,
             fontFamily: "Roboto",
           }}
@@ -227,7 +231,8 @@ const LecturerDashboard = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                backgroundColor: "white",
+                background:
+                  "linear-gradient(to left,  #87CEEB, #87CEEB, #F5F5F5)",
                 padding: "20px",
                 width: "400px",
               }}
@@ -333,9 +338,9 @@ const LecturerDashboard = () => {
         </div>
       </div>
       <Typography
-         style={{
+        style={{
           marginTop: 10,
-          marginLeft: 10,
+          marginLeft: 50,
           fontSize: 30,
           fontFamily: "Roboto",
         }}
@@ -351,53 +356,167 @@ const LecturerDashboard = () => {
         {MentorLecture.length > 0 ? (
           MentorLecture.map((data, index) => {
             return (
-              <Grid item xs={12} sm={6} md={4} key={data._id}>
-                <Card
-                  style={{
-                    width: 450,
-                    height: 300,
-                    margin: "auto",
-                  }}
-                >
-                  <CardContent>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <Typography variant="h5">
-                        Lecture {index + 1}: {data?.lectureName}
-                      </Typography>
-                      <BiSolidTrashAlt
-                        style={{ cursor: "pointer" }}
-                        color="red"
-                        size={22}
-                        onClick={() => {
-                          setAsk(true);
-                          setId(data._id);
-                        }}
-                      />
-                    </div>
-                    <Typography variant="body2">
-                      {data?.lectureDescription}
-                    </Typography>
-                  </CardContent>
+              // <Grid item xs={12} sm={6} md={4} key={data._id}>
+              //   <Card
+              //     style={{
+              //       width: 450,
+              //       height: 300,
+              //       margin: "auto",
+              //     }}
+              //   >
+              //     <CardContent>
+              //       <div
+              //         style={{
+              //           display: "flex",
+              //           alignItems: "center",
+              //           justifyContent: "space-between",
+              //         }}
+              //       >
+              //         <Typography variant="h5">
+              //           Lecture {index + 1}: {data?.lectureName}
+              //         </Typography>
+              //         <BiSolidTrashAlt
+              //           style={{ cursor: "pointer" }}
+              //           color="red"
+              //           size={22}
+              //           onClick={() => {
+              //             setAsk(true);
+              //             setId(data._id);
+              //           }}
+              //         />
+              //       </div>
+              //       <Typography variant="body2">
+              //         {data?.lectureDescription}
+              //       </Typography>
+              //     </CardContent>
+              //     <img
+              //       onClick={() =>
+              //         handleDownloadPDF(data.pdfData, data.lecturePdfLocation)
+              //       }
+              //       src={pdf}
+              //       alt="PDF"
+              //       style={{ width: 80, height: 80, cursor: "pointer" }}
+              //     />
+              //     <br />
+              //     <div style={{ marginLeft: "10px", width: 250 }}>
+              //       <a href={data?.lectureLink}>Link: {data?.lectureLink}</a>
+              //     </div>
+              //   </Card>
+              // </Grid>
+
+              <div
+                style={{
+                  marginTop: 20,
+                  width: "90%",
+                  height: 200,
+                  borderRadius: 20,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  // alignItems: "center",
+                  // alignSelf: "center",
+                  borderStyle: "solid",
+                  borderWidth: 2,
+                  flexDirection: "row",
+                  borderColor: "green",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+
+                  padding: 20,
+                }}
+              >
+                <div>
                   <img
+                    style={{
+                      width: 80,
+                      height: 80,
+                      borderRadius: 50,
+                      borderColor: "#87CEEB",
+                      borderWidth: 5,
+                      borderStyle: "solid",
+                    }}
                     onClick={() =>
                       handleDownloadPDF(data.pdfData, data.lecturePdfLocation)
                     }
                     src={pdf}
                     alt="PDF"
-                    style={{ width: 80, height: 80, cursor: "pointer" }}
                   />
-                  <br />
-                  <div style={{ marginLeft: "10px", width: 250 }}>
-                    <a href={data?.lectureLink}>Link: {data?.lectureLink}</a>
-                  </div>
-                </Card>
-              </Grid>
+                </div>
+                <div style={{ width: 400, marginRight: 400 }}>
+                  <Typography style={{ marginTop: 10, fontSize: 25 }}>
+                    Lecture {index + 1}: {data?.lectureName}
+                  </Typography>
+
+                  <Typography style={{ fontSize: 16 }}>
+                    Mentor Name: {data?.MentorName}
+                  </Typography>
+                  <a href={data?.lectureLink}>Link: {data?.lectureLink}</a>
+                  <Typography
+                    style={{
+                      marginTop: 30,
+                      fontSize: 12,
+                      color: "GrayText",
+                      // marginRight: 400,
+                    }}
+                  >
+                    Lecture Description: {data?.lectureDescription}
+                  </Typography>
+                </div>
+                <BiSolidTrashAlt
+                  style={{ cursor: "pointer" }}
+                  color="red"
+                  size={22}
+                  onClick={() => {
+                    setAsk(true);
+                    setId(data._id);
+                  }}
+                />
+                <Divider orientation="vertical" style={dividerStyle} />
+                <div style={{ width: 300 }}>
+                  <Button
+                    onClick={handleOpenChat}
+                    style={{
+                      backgroundColor: "#FAC213",
+                      width: 300,
+                      borderRadius: 30,
+                      color: "black",
+                      fontWeight: "600",
+                    }}
+                  >
+                    Live Chat
+                  </Button>
+                  <Typography
+                    style={{
+                      textAlign: "center",
+                      marginTop: 20,
+                      fontSize: 12,
+                    }}
+                  >
+                    You can Live chat with the service Procider for any further
+                    queries or Advance booking
+                  </Typography>
+                  <Divider style={{ marginTop: 10 }} />
+                  <Typography
+                    style={{
+                      textAlign: "center",
+                      marginTop: 10,
+                      fontSize: 12,
+                    }}
+                  >
+                    Unlimited Chat, email or text
+                  </Typography>
+                  <Divider style={{ marginTop: 10 }} />
+                  <Typography
+                    style={{
+                      textAlign: "center",
+                      marginTop: 10,
+                      fontSize: 12,
+                    }}
+                  >
+                    Up to 4 calls per month
+                  </Typography>
+                  <Divider style={{ marginTop: 10 }} />
+                </div>
+              </div>
             );
           })
         ) : (

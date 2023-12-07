@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { Box, Card, Typography, Button } from "@mui/material";
+import { Box, Card, Typography, Button, Icon, IconButton } from "@mui/material";
 import Image1 from "../assets/images/6.png";
+import Python from '../assets/images/python.png'
+import JavaScript from '../assets/images/Js.png'
+import Java from '../assets/images/java.png'
+import Cpp from '../assets/images/cpppp.png'
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 function Screen() {
   const navigate = useNavigate();
   const [selectedLanguages, setSelectedLanguages] = useState([]);
@@ -26,57 +30,162 @@ function Screen() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "90vh",
+        // height: "90vh",
+        marginTop: 10,
         fontFamily: "Roboto",
-        backgroundColor: "#E6F7FF",
-      }}>
+        // backgroundColor: "#E6F7FF",
+      }}
+    >
       <Typography variant="h4" gutterBottom>
         Select language to Continue
       </Typography>
-      <Card
-        sx={{
-          width: 250,
-          height: 300,
-          borderRadius: 10,
-          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundImage: `url(${Image1})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          marginTop: 3,
-        }}></Card>
 
-      <Box sx={{ marginTop: 5 }}>
-        <Button
-          variant={isLanguageSelected("JavaScript") ? "contained" : "outlined"}
-          color="primary"
-          sx={{ marginRight: 2 }}
-          onClick={() => handleLanguageClick("JavaScript")}>
-          JavaScript
-        </Button>
-        <Button
-          variant={isLanguageSelected("Python") ? "contained" : "outlined"}
-          color="primary"
-          sx={{ marginRight: 2 }}
-          onClick={() => handleLanguageClick("Python")}>
-          Python
-        </Button>
-        <Button
-          variant={isLanguageSelected("Java") ? "contained" : "outlined"}
-          color="primary"
-          sx={{ marginRight: 2 }}
-          onClick={() => handleLanguageClick("Java")}>
-          Java
-        </Button>
-        <Button
-          variant={isLanguageSelected("C++") ? "contained" : "outlined"}
-          color="primary"
-          onClick={() => handleLanguageClick("C++")}>
-          C++
-        </Button>
+      <Box
+        sx={{
+          marginTop: 5,
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            marginRight:30
+          }}
+        >
+          <Card
+            sx={{
+              width: 250,
+              height: 320,
+              borderRadius: 10,
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundImage: `url(${JavaScript})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              marginTop: 3,
+            }}
+          ></Card>
+
+          <Button
+            variant={
+              isLanguageSelected("JavaScript") ? "contained" : "outlined"
+            }
+            color="primary"
+            sx={{ marginRight: 2, marginTop: 5 }}
+            onClick={() => handleLanguageClick("JavaScript")}
+          >
+            JavaScript
+          </Button>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            marginRight:30
+          }}
+        >
+          <Card
+            sx={{
+              width: 250,
+              height: 320,
+              borderRadius: 10,
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundImage: `url(${Python})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              marginTop: 3,
+            }}
+          ></Card>
+
+          <Button
+            variant={isLanguageSelected("Python") ? "contained" : "outlined"}
+            color="primary"
+            sx={{ marginRight: 2, marginTop: 5 }}
+            onClick={() => handleLanguageClick("Python")}
+          >
+            Python
+          </Button>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            marginRight:30
+          }}
+        >
+          <Card
+            sx={{
+              width: 250,
+              height: 320,
+              borderRadius: 10,
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundImage: `url(${Java})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              marginTop: 3,
+            }}
+          ></Card>
+
+          <Button
+            variant={isLanguageSelected("Java") ? "contained" : "outlined"}
+            color="primary"
+            sx={{ marginRight: 2, marginTop: 5 }}
+            onClick={() => handleLanguageClick("Java")}
+          >
+            Java
+          </Button>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <Card
+            sx={{
+              width: 250,
+              height: 320,
+              borderRadius: 10,
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundImage: `url(${Cpp})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              marginTop: 3,
+            }}
+          ></Card>
+
+          <Button
+            variant={isLanguageSelected("C++") ? "contained" : "outlined"}
+            color="primary"
+            sx={{ marginRight: 2, marginTop: 5 }}
+            onClick={() => handleLanguageClick("C++")}
+          >
+            C++
+          </Button>
+        </div>
       </Box>
+
       <Button
         onClick={() => {
           console.log(selectedLanguages);
@@ -84,10 +193,11 @@ function Screen() {
             "SelectedCatByStudent",
             JSON.stringify(selectedLanguages)
           );
-          navigate("/studentDashboard");
+          navigate("/studentWelcome");
         }}
-        style={{ marginTop: 40, backgroundColor: "#12486B", width: 200 }}>
-        <Typography style={{ color: "white" }}>Continue</Typography>
+        style={{ marginTop: 70, backgroundColor: "#FAC213", width: 200 }}
+      >
+        <Typography style={{ color: "black" }}>Click to Continue</Typography>
       </Button>
     </Box>
   );

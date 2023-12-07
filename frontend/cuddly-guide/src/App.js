@@ -16,6 +16,8 @@ import Messenger from "./screens/Messenger";
 import AboutPage from "./screens/About";
 import QuizScreen from "./screens/VerificationScreen";
 import Services from "./screens/Services"
+import ChooseCategory from "./screens/ChooseCategory";
+import Reviews from "./screens/Reviews";
 export default function App() {
   return (
     <BrowserRouter>
@@ -38,9 +40,11 @@ export default function App() {
           <Route path="lecturerDashboard" element={<LecturerDashboard />} />
           <Route path="ViewAll" element={<ViewAllMentors />} />
           <Route path="Messenger" element={<Messenger />} />
-          <Route path="About" element={<AboutPage />} />
+          <Route path="about" element={<AboutPage />} />
           <Route path="quiz" element={<QuizScreen />} />
           <Route path="services" element={<Services />} />
+          <Route path="chooseCategory" element={<ChooseCategory />} />
+          <Route path="reviews" element={<Reviews />} />
         </Route>
       </Routes>
     </BrowserRouter>

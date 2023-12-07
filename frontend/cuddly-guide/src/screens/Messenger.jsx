@@ -8,7 +8,8 @@ import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
 import { io } from "socket.io-client";
-
+import { Button, Typography } from "@mui/material";
+import UserPhoto from '../assets/images/3.png'
 var url = process.env.REACT_APP_API_KEY;
 function Messenger() {
   const userdetails = JSON.parse(localStorage.getItem("userdetails"));
@@ -154,10 +155,11 @@ function Messenger() {
     return (
       <div
         className="TopContainer"
-        style={{ display: "flex", overflow: "hidden" }}>
-        <div className="ChatScreen">
-          <div className="ChatMenu">
-            <div className="ChatMenuWrapper">
+        style={{ display: "flex", overflow: "hidden", }}>
+        <div className="ChatScreen" >
+          <div className="ChatMenu" style={{backgroundColor:'#E0F4FF'}}>
+            {/* <div className="ChatMenuWrapper">
+            <Typography>ashcjsa</Typography>
               {conversation.map((c) => {
                 if (
                   c.members.includes(arrivalMessage?.sender) &&
@@ -181,13 +183,23 @@ function Messenger() {
                   </div>
                 );
               })}
-            </div>
+            </div> */}
+             <img
+                    className="OtherUserPhoto2"
+                    src={UserPhoto}
+                    alt="No photo"
+                  />
+                  <Button style={{backgroundColor:'#FAC213',  textAlign:'center',marginLeft:110, marginTop:10, width:200}}>
+                  Find Mentors
+                  </Button>
+               
           </div>
-          <div className="ChatBox">
+          <div className="ChatBox" style={{backgroundColor:'skyblue'}}>
             {/* To Take input */}
             {currentChat ? (
               <div className="ChatBoxWrapper">
                 <div className="ChatUserName">
+                  
                   <img
                     className="OtherUserPhoto"
                     src={receiverUser?.photo}
@@ -196,7 +208,8 @@ function Messenger() {
 
                   <span className="OtherUserName">{receiverUser?.name}</span>
                 </div>
-                <div className="messageArea">
+                <div className="messageArea" >
+                 
                   {messages.map((m) => (
                     <div ref={scrollRef}>
                       <Message
@@ -245,11 +258,11 @@ function Messenger() {
                         className="InputMessageContainer"
                         name="message"
                         type="text"
-                         
+                        
                         // className="textArea"
                       />
 
-                      <button style={{color:'white', background:'cornflowerblue'}} type="submit" className="SendButton">
+                      <button style={{color:'white', background:'#0766AD'}} type="submit" className="SendButton">
                         Send
                       </button>
                     </Form>
@@ -260,13 +273,36 @@ function Messenger() {
               <span>Open a conversation to start a chat</span>
             )}
           </div>
-          <div className="ChatOnline">
+          <div className="ChatOnline" style={{backgroundColor:'#E0F4FF'}}>
             <div className="ChatOnlineWrapper">
               <ChatOnline
                 onlineUsers={onlineUsers}
                 curentId={currentUser}
                 setcurrentChat={setcurrentChat}
               />
+               {conversation.map((c) => {
+                if (
+                  c.members.includes(arrivalMessage?.sender) &&
+                  c.members.includes(currentUser)
+                ) {
+                  c.lastMessage = lastMessage;
+                }
+
+                return (
+                  <div
+                    //Ab hum jab click kara ga chat pa to vo conversation mil  jay gi
+                    //Or hum us conversation id ko use karta hova sari chat hasil kar la ga
+                    onClick={() => {
+                      setcurrentChat(c);
+                    }}>
+                    <Conversation
+                      conversation={c}
+                      currentUser={currentUser}
+                      lastMessage={c.lastMessage}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ function ProtectedRoutes() {
           } else if (userdetails?.role === "Student") {
             navigate("/studentChooseLang");
           } else {
-            navigate("/chooseSubject");
+            navigate("/chooseCategory");
           }
         } catch (err) {
           navigate("/login");

@@ -22,14 +22,16 @@ const centerStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  minHeight: "92vh",
+  minHeight: "100vh",
   //   backgroundColor: 'red',
   overflow: "hidden", // Hide overflow to prevent scrollbars
+  background:  "linear-gradient(to left,  #87CEEB, #87CEEB, #F5F5F5)",
 };
 
 const formContainerStyle = {
   flex: 1,
   padding: "20px",
+  
 };
 
 const imageContainerStyle = {

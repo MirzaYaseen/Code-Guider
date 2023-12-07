@@ -1,5 +1,5 @@
 .conversationContainer {
-  margin: 15px;
+  margin: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+ 
 
 }
 .FriendPhoto {

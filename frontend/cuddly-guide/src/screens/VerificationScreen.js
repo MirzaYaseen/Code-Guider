@@ -13,7 +13,7 @@ import { makeStyles } from '@mui/styles';
 import backgroundImage from '../assets/images/background.jpg'
 const useStyles = makeStyles((theme) => ({
   backgroundContainer: {
-    background: '#E6F7FF', // Use the imported image
+    background:  "linear-gradient(to left,  #87CEEB, #87CEEB, #F5F5F5)",
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     position: 'fixed',

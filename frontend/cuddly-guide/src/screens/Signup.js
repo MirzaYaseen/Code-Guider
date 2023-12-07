@@ -322,11 +322,6 @@
 
 // export default SignUpPage;
 
-
-
-
-
-
 import React, { useState } from "react";
 import {
   Grid,
@@ -338,7 +333,7 @@ import {
   Card,
 } from "@mui/material";
 import { css } from "@emotion/react";
-import signupImage from "../assets/images/signup1.jpg";
+import signupImage from "../assets/images/1.png";
 import background from "../assets/images/back1.jpg";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -456,50 +451,39 @@ const SignUpPage = () => {
   };
   return (
     <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
-      height: "100vh",
-    }}
-  >
-    <ToastContainer
-      position="top-right"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-    />
-      <Card
-         style={{
-          display: "flex",
-          width: "400px",
-         
-          height: "650px",
-          flexDirection: "row",
-          alignItems: "center",
-          backgroundColor: "#fff",
-          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
-          width: "800px", // Adjust the card width as needed
-        }}
-      >
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: "100vh",
+        overflow:'hidden'
+      }}
+    >
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+     
         <div
           style={{
             width: "50%",
-            padding: "20px",
+            padding: "50px",
           }}
         >
           <Typography
             style={{
               marginTop: 5,
               textAlign: "center",
-              fontSize: 30,
+              fontSize: 35,
               fontWeight: "500",
               color: "#212A3E",
             }}
@@ -512,8 +496,8 @@ const SignUpPage = () => {
                 alt="Selected Avatar"
                 src={avatar}
                 sx={{
-                  width: 100,
-                  height: 100,
+                  width: 150,
+                  height: 150,
                   marginTop: 5,
                   marginLeft: "auto",
                   marginRight: "auto",
@@ -526,8 +510,8 @@ const SignUpPage = () => {
               <Avatar
                 alt="Default Avatar"
                 sx={{
-                  width: 100,
-                  height: 100,
+                  width: 150,
+                  height: 150,
                   marginTop: 5,
                   marginLeft: "auto",
                   marginRight: "auto",
@@ -546,12 +530,11 @@ const SignUpPage = () => {
               style={{ display: "none" }}
               onChange={handleAvatarChange}
             />
-          )
-          }
+          )}
           <TextField
             style={{
               marginTop: 60,
-              width: 350,
+              width: 500,
               borderRadius: 10,
               display: "flex",
               marginLeft: "auto",
@@ -567,7 +550,7 @@ const SignUpPage = () => {
           <TextField
             style={{
               marginTop: 30,
-              maxWidth: 350,
+              maxWidth: 500,
               borderRadius: 10,
               display: "flex",
               marginLeft: "auto",
@@ -583,7 +566,7 @@ const SignUpPage = () => {
           <TextField
             style={{
               marginTop: 30,
-              width: 350,
+              width: 500,
               borderRadius: 10,
               display: "flex",
               marginLeft: "auto",
@@ -595,8 +578,9 @@ const SignUpPage = () => {
             value={password}
             onChange={handlePasswordChange}
             error={passwordError}
-            helperText={passwordError ? "Please enter a password" : ""}/>
-          
+            helperText={passwordError ? "Please enter a password" : ""}
+          />
+
           <Button
             onClick={handleSubmit}
             variant="contained"
@@ -604,10 +588,12 @@ const SignUpPage = () => {
               display: "flex",
               marginLeft: "auto",
               marginRight: "auto",
-              width: 250,
+              width: 300,
               marginTop: 50,
               borderRadius: 20,
-              backgroundColor: "#212A3E",
+              backgroundColor: "#FAC213",
+              color:'black',
+              fontSize:16
             }}
           >
             Sign up
@@ -628,10 +614,10 @@ const SignUpPage = () => {
         </div>
         <div
           style={{
-            width: "50%",
+            width: "90%",
             height: "100%", // Adjust the width of the image container
             // Add padding for space
-            backgroundColor: "pink",
+            // backgroundColor: "pink",
           }}
         >
           <img
@@ -654,10 +640,9 @@ const SignUpPage = () => {
             height: "100%",
           }}
         ></div> */}
-      </Card>
+      
     </div>
   );
 };
 
 export default SignUpPage;
-

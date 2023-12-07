@@ -38,6 +38,19 @@
   border-radius: 50%;
   margin-bottom: 8px;
 }
+.OtherUserPhoto2 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+margin-top: 210px;
+/* margin-bottom: 60px; */
+margin-left: auto;
+margin-right: auto;
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+   display: flex;
+}
 .OtherUserName {
   margin-left: 15px;
   font-weight: bold;
@@ -74,4 +87,5 @@
   width: 65%;
   border-radius: 10px;
   padding-left: 10px;
+  background-color: azure;
 }

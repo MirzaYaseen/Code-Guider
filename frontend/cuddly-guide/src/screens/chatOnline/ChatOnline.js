@@ -58,11 +58,11 @@ function ChatOnline({ onlineUsers, curentId, setcurrentChat }) {
     console.log(onlineFriends);
 
     return (
-      <div>
-        <p style={{ textAlign: "center", fontWeight: "bold", fontSize: 18 }}>
+      <div > 
+        <p style={{ textAlign: "center", fontWeight: "bold", fontSize: 18, marginBottom:30, marginTop:90 }}>
           Online Users
         </p>
-        <p style={{ marginLeft: 13 }}>Available soon</p>
+        {/* <p style={{ marginLeft: 13 }}>Available soon</p> */}
         {onlineFriends.map((o) => {
           if (o._id !== curentId) {
             return (
